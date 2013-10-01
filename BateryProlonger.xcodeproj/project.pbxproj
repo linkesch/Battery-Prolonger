@@ -11,12 +11,20 @@
 		2619222A17FA0AAC0062FC1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2619222817FA0AAC0062FC1D /* InfoPlist.strings */; };
 		2619222C17FA0AAC0062FC1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2619222B17FA0AAC0062FC1D /* main.m */; };
 		2619223017FA0AAC0062FC1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2619222E17FA0AAC0062FC1D /* Credits.rtf */; };
-		2619223317FA0AAC0062FC1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2619223217FA0AAC0062FC1D /* AppDelegate.m */; };
+		2619223317FA0AAC0062FC1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2619223217FA0AAC0062FC1D /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2619223617FA0AAC0062FC1D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2619223417FA0AAC0062FC1D /* MainMenu.xib */; };
 		2619223E17FA0AAD0062FC1D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2619223D17FA0AAD0062FC1D /* SenTestingKit.framework */; };
 		2619223F17FA0AAD0062FC1D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2619221F17FA0AAC0062FC1D /* Cocoa.framework */; };
 		2619224717FA0AAD0062FC1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2619224517FA0AAD0062FC1D /* InfoPlist.strings */; };
 		2619224A17FA0AAD0062FC1D /* BateryProlongerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2619224917FA0AAD0062FC1D /* BateryProlongerTests.m */; };
+		2619225417FA13880062FC1D /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2619225317FA13880062FC1D /* Growl.framework */; };
+		2619225617FA13B20062FC1D /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2619225317FA13880062FC1D /* Growl.framework */; };
+		2619225C17FA1F4F0062FC1D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2619225B17FA1F4F0062FC1D /* IOKit.framework */; };
+		269BD71717FB44400045D9B4 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269BD71617FB44400045D9B4 /* About.xib */; };
+		269BD71A17FB44670045D9B4 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BD71917FB44670045D9B4 /* AboutController.m */; };
+		269BD72017FB50AD0045D9B4 /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 269BD71F17FB50AD0045D9B4 /* icon-small.png */; };
+		269BD72417FB5FBD0045D9B4 /* battery.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 269BD72317FB5FBD0045D9B4 /* battery.iconset */; };
+		269BD72617FB6F190045D9B4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 269BD72517FB6F190045D9B4 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +36,19 @@
 			remoteInfo = BateryProlonger;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2619225517FA13AC0062FC1D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2619225617FA13B20062FC1D /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2619221C17FA0AAC0062FC1D /* BateryProlonger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BateryProlonger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +70,14 @@
 		2619224617FA0AAD0062FC1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2619224817FA0AAD0062FC1D /* BateryProlongerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BateryProlongerTests.h; sourceTree = "<group>"; };
 		2619224917FA0AAD0062FC1D /* BateryProlongerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BateryProlongerTests.m; sourceTree = "<group>"; };
+		2619225317FA13880062FC1D /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		2619225B17FA1F4F0062FC1D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		269BD71617FB44400045D9B4 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
+		269BD71817FB44670045D9B4 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
+		269BD71917FB44670045D9B4 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
+		269BD71F17FB50AD0045D9B4 /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small.png"; sourceTree = "<group>"; };
+		269BD72317FB5FBD0045D9B4 /* battery.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = battery.iconset; sourceTree = "<group>"; };
+		269BD72517FB6F190045D9B4 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2619225C17FA1F4F0062FC1D /* IOKit.framework in Frameworks */,
 				2619222017FA0AAC0062FC1D /* Cocoa.framework in Frameworks */,
+				2619225417FA13880062FC1D /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +106,8 @@
 		2619221317FA0AAC0062FC1D = {
 			isa = PBXGroup;
 			children = (
+				269BD72517FB6F190045D9B4 /* .gitignore */,
+				2619225B17FA1F4F0062FC1D /* IOKit.framework */,
 				2619222517FA0AAC0062FC1D /* BateryProlonger */,
 				2619224217FA0AAD0062FC1D /* BateryProlongerTests */,
 				2619221E17FA0AAC0062FC1D /* Frameworks */,
@@ -94,6 +127,7 @@
 		2619221E17FA0AAC0062FC1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2619225317FA13880062FC1D /* Growl.framework */,
 				2619221F17FA0AAC0062FC1D /* Cocoa.framework */,
 				2619223D17FA0AAD0062FC1D /* SenTestingKit.framework */,
 				2619222117FA0AAC0062FC1D /* Other Frameworks */,
@@ -114,7 +148,12 @@
 		2619222517FA0AAC0062FC1D /* BateryProlonger */ = {
 			isa = PBXGroup;
 			children = (
+				269BD72317FB5FBD0045D9B4 /* battery.iconset */,
 				2619223117FA0AAC0062FC1D /* AppDelegate.h */,
+				269BD71F17FB50AD0045D9B4 /* icon-small.png */,
+				269BD71617FB44400045D9B4 /* About.xib */,
+				269BD71817FB44670045D9B4 /* AboutController.h */,
+				269BD71917FB44670045D9B4 /* AboutController.m */,
 				2619223217FA0AAC0062FC1D /* AppDelegate.m */,
 				2619223417FA0AAC0062FC1D /* MainMenu.xib */,
 				2619222617FA0AAC0062FC1D /* Supporting Files */,
@@ -163,6 +202,7 @@
 				2619221817FA0AAC0062FC1D /* Sources */,
 				2619221917FA0AAC0062FC1D /* Frameworks */,
 				2619221A17FA0AAC0062FC1D /* Resources */,
+				2619225517FA13AC0062FC1D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -227,6 +267,10 @@
 				2619222A17FA0AAC0062FC1D /* InfoPlist.strings in Resources */,
 				2619223017FA0AAC0062FC1D /* Credits.rtf in Resources */,
 				2619223617FA0AAC0062FC1D /* MainMenu.xib in Resources */,
+				269BD71717FB44400045D9B4 /* About.xib in Resources */,
+				269BD72017FB50AD0045D9B4 /* icon-small.png in Resources */,
+				269BD72417FB5FBD0045D9B4 /* battery.iconset in Resources */,
+				269BD72617FB6F190045D9B4 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +307,7 @@
 			files = (
 				2619222C17FA0AAC0062FC1D /* main.m in Sources */,
 				2619223317FA0AAC0062FC1D /* AppDelegate.m in Sources */,
+				269BD71A17FB44670045D9B4 /* AboutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +428,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BateryProlonger/BateryProlonger-Prefix.pch";
 				INFOPLIST_FILE = "BateryProlonger/BateryProlonger-Info.plist";
@@ -395,6 +444,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BateryProlonger/BateryProlonger-Prefix.pch";
 				INFOPLIST_FILE = "BateryProlonger/BateryProlonger-Info.plist";
@@ -452,6 +505,7 @@
 				2619224F17FA0AAD0062FC1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2619225017FA0AAD0062FC1D /* Build configuration list for PBXNativeTarget "BateryProlongerTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +514,7 @@
 				2619225217FA0AAD0062FC1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
