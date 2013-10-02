@@ -8,23 +8,10 @@ Battery Prolonger is a simple MAC OS X application, that informs you when is the
 http://www.wired.com/gadgetlab/2013/09/laptop-battery
 
 
-Website
--------
+Website (download & screenshots)
+--------------------------------
 
 http://orthes.github.io/Battery-Prolonger
-
-
-Download application
---------------------
-
-[BateryProlonger.zip](https://github.com/orthes/Battery-Prolonger/releases/download/v0.1-alpha/BateryProlonger.zip)
-
-
-Screenshots
------------
-
-![Battery Prolonger Screenshot 01](http://www.linkesch.sk/uploads/creator5/1_890d6ad67afe18a7e4a4c48f17c97d151f63a49b/image/batteryprolonger03.png)
-![Battery Prolonger Screenshot 02](http://www.linkesch.sk/uploads/creator5/1_890d6ad67afe18a7e4a4c48f17c97d151f63a49b/image/batteryprolonger02.png)
 
 
 Version
