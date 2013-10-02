@@ -22,13 +22,9 @@ int lastPowerSource;
     NSBundle *bundle = [NSBundle mainBundle];
     NSImage* icon = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"icon-small" ofType:@"png"]];
     [statusItem setImage:icon];
-    
-    //[statusItem setTitle:@"Battery Prolonger"];
     [statusItem setMenu:statusMenu];
     [statusItem setHighlightMode:YES];
-    
-    
-    
+        
     if ([self findAppInLoginItem])
     {
         [startAtLoginMenuItem setState: NSOnState];
@@ -92,12 +88,6 @@ int lastPowerSource;
         notified1 = false;
         notified2 = true;
     }
-    else
-    {
-        //NSLog(@"Do nothing");
-    }
-
-	//[theTimer release];
 }
 
 

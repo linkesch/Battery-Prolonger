@@ -20,6 +20,7 @@
 		2619225417FA13880062FC1D /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2619225317FA13880062FC1D /* Growl.framework */; };
 		2619225617FA13B20062FC1D /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2619225317FA13880062FC1D /* Growl.framework */; };
 		2619225C17FA1F4F0062FC1D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2619225B17FA1F4F0062FC1D /* IOKit.framework */; };
+		264D273317FC856700AA3E61 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2619225317FA13880062FC1D /* Growl.framework */; };
 		269BD71717FB44400045D9B4 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269BD71617FB44400045D9B4 /* About.xib */; };
 		269BD71A17FB44670045D9B4 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BD71917FB44670045D9B4 /* AboutController.m */; };
 		269BD72017FB50AD0045D9B4 /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 269BD71F17FB50AD0045D9B4 /* icon-small.png */; };
@@ -97,6 +98,7 @@
 			files = (
 				2619223E17FA0AAD0062FC1D /* SenTestingKit.framework in Frameworks */,
 				2619223F17FA0AAD0062FC1D /* Cocoa.framework in Frameworks */,
+				264D273317FC856700AA3E61 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,11 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				269BD72317FB5FBD0045D9B4 /* battery.iconset */,
-				2619223117FA0AAC0062FC1D /* AppDelegate.h */,
 				269BD71F17FB50AD0045D9B4 /* icon-small.png */,
 				269BD71617FB44400045D9B4 /* About.xib */,
 				269BD71817FB44670045D9B4 /* AboutController.h */,
 				269BD71917FB44670045D9B4 /* AboutController.m */,
+				2619223117FA0AAC0062FC1D /* AppDelegate.h */,
 				2619223217FA0AAC0062FC1D /* AppDelegate.m */,
 				2619223417FA0AAC0062FC1D /* MainMenu.xib */,
 				2619222617FA0AAC0062FC1D /* Supporting Files */,
@@ -461,7 +463,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BateryProlonger.app/Contents/MacOS/BateryProlonger";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BateryProlonger/BateryProlonger-Prefix.pch";
 				INFOPLIST_FILE = "BateryProlongerTests/BateryProlongerTests-Info.plist";
@@ -476,7 +481,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BateryProlonger.app/Contents/MacOS/BateryProlonger";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BateryProlonger/BateryProlonger-Prefix.pch";
 				INFOPLIST_FILE = "BateryProlongerTests/BateryProlongerTests-Info.plist";

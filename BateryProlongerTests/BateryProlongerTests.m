@@ -14,19 +14,45 @@
 {
     [super setUp];
     
-    // Set-up code here.
+    appDelegate = [[AppDelegate alloc] init];
+    viewController = [[[NSApplication sharedApplication] keyWindow] windowController];
+    view = viewController.view;
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
     
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testAppDelegate
 {
-    STFail(@"Unit tests are not implemented yet in BateryProlongerTests");
+    STAssertNotNil(appDelegate, @"appDelegate should not be nil");
 }
+
+- (void)testFindAppInLoginItem
+{
+    STAssertFalse([appDelegate findAppInLoginItem], @"findAppInLoginItem should be false");
+}
+
+- (void)testAddAppAsLoginItem
+{
+    [appDelegate addAppAsLoginItem];
+    STAssertTrue([appDelegate findAppInLoginItem], @"findAppInLoginItem should be true if called after findAppInLoginItem");
+}
+
+- (void)testDeleteAppFromLoginItem
+{
+    [appDelegate deleteAppFromLoginItem];
+    STAssertFalse([appDelegate findAppInLoginItem], @"findAppInLoginItem should be false if called after deleteAppFromLoginItem");
+}
+
+- (void)testToogleLoginItem
+{
+    id menuItem = [view viewWithTag:2];    
+    [appDelegate toogleLoginItem:menuItem];
+    STAssertTrue([appDelegate findAppInLoginItem], @"findAppInLoginItem should be true if called after toogleLoginItem");
+}
+
 
 @end

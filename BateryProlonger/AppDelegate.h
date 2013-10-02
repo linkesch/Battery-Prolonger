@@ -24,5 +24,8 @@
 - (void) showNotification:(NSString *)notification;
 - (IBAction) openAboutWindow:(id)sender;
 - (IBAction) toogleLoginItem:(id)sender;
+- (bool) findAppInLoginItem;
+- (void) addAppAsLoginItem;
+- (void) deleteAppFromLoginItem;
 
 @end

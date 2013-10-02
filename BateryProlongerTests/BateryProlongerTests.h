@@ -7,7 +7,13 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "AppDelegate.h"
+#import "AboutController.h"
 
 @interface BateryProlongerTests : SenTestCase
-
+{
+    AppDelegate *appDelegate;
+    NSViewController *viewController;
+    NSView *view;
+}
 @end
