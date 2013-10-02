@@ -23,7 +23,7 @@ Download application
 Screenshots
 -----------
 
-![Battery Prolonger Screenshot 01](http://www.linkesch.sk/uploads/creator5/1_890d6ad67afe18a7e4a4c48f17c97d151f63a49b/image/batteryprolonger01.png)
+![Battery Prolonger Screenshot 01](http://www.linkesch.sk/uploads/creator5/1_890d6ad67afe18a7e4a4c48f17c97d151f63a49b/image/batteryprolonger03.png)
 ![Battery Prolonger Screenshot 02](http://www.linkesch.sk/uploads/creator5/1_890d6ad67afe18a7e4a4c48f17c97d151f63a49b/image/batteryprolonger02.png)
 
 
