@@ -8,12 +8,20 @@
 
 #import "AppDelegate.h"
 #import "aboutController.h"
+#import "preferencesController.h"
 
 @implementation AppDelegate
 
 bool notified1 = false;
 bool notified2 = false;
 int lastPowerSource;
+
++ (void)initialize
+{
+    NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                              @"true", @"autoClose", @"80", @"topLimit", @"40", @"bottomLimit", nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+}
 
 - (void)awakeFromNib
 {
@@ -24,11 +32,6 @@ int lastPowerSource;
     [statusItem setImage:icon];
     [statusItem setMenu:statusMenu];
     [statusItem setHighlightMode:YES];
-        
-    if ([self findAppInLoginItem])
-    {
-        [startAtLoginMenuItem setState: NSOnState];
-    }
     
     
     [self refresh:NULL];
@@ -41,6 +44,8 @@ int lastPowerSource;
     CFTypeRef info;
 	CFArrayRef list;
 	CFDictionaryRef	battery;
+    NSInteger topLimit;
+    NSInteger bottomLimit;
     bool batteryCharging;
     int batteryCurrent;
 	
@@ -73,17 +78,20 @@ int lastPowerSource;
         notified1 = notified2 = false;
     }
     
-    if(batteryCharging == 1 && batteryCurrent > 80 && notified1 == false)
+    topLimit = [[[NSUserDefaults standardUserDefaults] objectForKey:@"topLimit"] integerValue];
+    bottomLimit = [[[NSUserDefaults standardUserDefaults] objectForKey:@"bottomLimit"] integerValue];
+    
+    if(batteryCharging == 1 && batteryCurrent > topLimit && notified1 == false)
     {
         NSString *notification = @"Your battery is charged enough.\n\nYou can unplug your MacBook now.";
         [self showNotification:notification];
         notified1 = true;
         notified2 = false;
     }
-    else if(batteryCharging == 0 && batteryCurrent < 40 && notified2 == false)
+    else if(batteryCharging == 0 && batteryCurrent < bottomLimit && notified2 == false)
     {
         
-        NSString *notification = @"Your battery is charged on less than 40%.\n\nPlease, plug in your MacBook to power adapter.";
+        NSString *notification =[NSString stringWithFormat:@"Your battery is charged to less than %li%%.\n\nPlease, plug in your MacBook to a power adapter.", bottomLimit];
         [self showNotification:notification];
         notified1 = false;
         notified2 = true;
@@ -104,12 +112,23 @@ int lastPowerSource;
     NSBundle *myBundle = [NSBundle bundleForClass:[AppDelegate class]];
     NSString *growlPath = [[myBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl.framework"];
     NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
+    Boolean isSticky = YES;
+    
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"autoClose"] isEqual: @"true"])
+    {
+        isSticky = NO;
+    }
     
     if (growlBundle && [growlBundle load])
     {
         [GrowlApplicationBridge setGrowlDelegate:self];
         
-        [GrowlApplicationBridge notifyWithTitle:@"Alert" description:notification notificationName:@"Notification" iconData:nil priority:2 isSticky:NO clickContext:[NSDate date]];
+        [GrowlApplicationBridge notifyWithTitle:@"Battery Prolonger" description:notification notificationName:@"Notification" iconData:nil priority:2 isSticky:isSticky clickContext:[NSDate date]];
+        
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"playSound"] isEqual: @"true"])
+        {
+            [[NSSound soundNamed:@"Purr"] play];
+        }
     }
 }
 
@@ -122,114 +141,13 @@ int lastPowerSource;
     [aboutController showWindow:self];
 }
 
-- (IBAction) toogleLoginItem:(id)sender
+- (IBAction)openPreferencesWindow:(id)sender
 {
-    if ([self findAppInLoginItem])
+    if (!preferencesController)
     {
-        [startAtLoginMenuItem setState: NSOffState];
-        [self deleteAppFromLoginItem];
+        preferencesController = [[PreferencesController alloc] initWithWindowNibName:@"Preferences"];
     }
-    else
-    {
-        [startAtLoginMenuItem setState: NSOnState];
-        [self addAppAsLoginItem];
-    }
-}
-
-- (bool) findAppInLoginItem
-{
-	NSString * appPath = [[NSBundle mainBundle] bundlePath];
-    
-	// This will retrieve the path for the application
-	// For example, /Applications/test.app
-	CFURLRef url = (CFURLRef)[NSURL fileURLWithPath:appPath];
-    
-	// Create a reference to the shared file list.
-	LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL,
-                                                            kLSSharedFileListSessionLoginItems, NULL);
-    
-	if (loginItems) {
-		UInt32 seedValue;
-		//Retrieve the list of Login Items and cast them to
-		// a NSArray so that it will be easier to iterate.
-		NSArray  *loginItemsArray = (NSArray *)LSSharedFileListCopySnapshot(loginItems, &seedValue);
-		int i = 0;
-		for(i = 0 ; i< [loginItemsArray count]; i++){
-			LSSharedFileListItemRef itemRef = (LSSharedFileListItemRef)[loginItemsArray
-                                                                        objectAtIndex:i];
-			//Resolve the item with URL
-			if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &url, NULL) == noErr) {
-				NSString * urlPath = [(NSURL*)url path];
-				if ([urlPath compare:appPath] == NSOrderedSame){
-					return true;
-				}
-			}
-		}
-		[loginItemsArray release];
-	}
-    
-    return false;
-}
-
-- (void) addAppAsLoginItem
-{
-	NSString * appPath = [[NSBundle mainBundle] bundlePath];
-    
-	// This will retrieve the path for the application
-	// For example, /Applications/test.app
-	CFURLRef url = (CFURLRef)[NSURL fileURLWithPath:appPath];
-    
-	// Create a reference to the shared file list.
-    // We are adding it to the current user only.
-    // If we want to add it all users, use
-    // kLSSharedFileListGlobalLoginItems instead of
-    //kLSSharedFileListSessionLoginItems
-	LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL,
-                                                            kLSSharedFileListSessionLoginItems, NULL);
-	if (loginItems) {
-		//Insert an item to the list.
-		LSSharedFileListItemRef item = LSSharedFileListInsertItemURL(loginItems,
-                                                                     kLSSharedFileListItemLast, NULL, NULL,
-                                                                     url, NULL, NULL);
-		if (item){
-			CFRelease(item);
-        }
-	}
-    
-	CFRelease(loginItems);
-}
-
-- (void) deleteAppFromLoginItem
-{
-	NSString * appPath = [[NSBundle mainBundle] bundlePath];
-    
-	// This will retrieve the path for the application
-	// For example, /Applications/test.app
-	CFURLRef url = (CFURLRef)[NSURL fileURLWithPath:appPath];
-    
-	// Create a reference to the shared file list.
-	LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL,
-                                                            kLSSharedFileListSessionLoginItems, NULL);
-    
-	if (loginItems) {
-		UInt32 seedValue;
-		//Retrieve the list of Login Items and cast them to
-		// a NSArray so that it will be easier to iterate.
-		NSArray  *loginItemsArray = (NSArray *)LSSharedFileListCopySnapshot(loginItems, &seedValue);
-		int i = 0;
-		for(i = 0 ; i< [loginItemsArray count]; i++){
-			LSSharedFileListItemRef itemRef = (LSSharedFileListItemRef)[loginItemsArray
-                                                                        objectAtIndex:i];
-			//Resolve the item with URL
-			if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &url, NULL) == noErr) {
-				NSString * urlPath = [(NSURL*)url path];
-				if ([urlPath compare:appPath] == NSOrderedSame){
-					LSSharedFileListItemRemove(loginItems,itemRef);
-				}
-			}
-		}
-		[loginItemsArray release];
-	}
+    [preferencesController showWindow:self];
 }
 
 @end

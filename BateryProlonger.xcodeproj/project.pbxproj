@@ -21,6 +21,8 @@
 		2619225617FA13B20062FC1D /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2619225317FA13880062FC1D /* Growl.framework */; };
 		2619225C17FA1F4F0062FC1D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2619225B17FA1F4F0062FC1D /* IOKit.framework */; };
 		264D273317FC856700AA3E61 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2619225317FA13880062FC1D /* Growl.framework */; };
+		268BEBF018142364003A6B1D /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268BEBEE18142364003A6B1D /* PreferencesController.m */; };
+		268BEBF118142364003A6B1D /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 268BEBEF18142364003A6B1D /* Preferences.xib */; };
 		269BD71717FB44400045D9B4 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269BD71617FB44400045D9B4 /* About.xib */; };
 		269BD71A17FB44670045D9B4 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BD71917FB44670045D9B4 /* AboutController.m */; };
 		269BD72017FB50AD0045D9B4 /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 269BD71F17FB50AD0045D9B4 /* icon-small.png */; };
@@ -73,6 +75,9 @@
 		2619224917FA0AAD0062FC1D /* BateryProlongerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BateryProlongerTests.m; sourceTree = "<group>"; };
 		2619225317FA13880062FC1D /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		2619225B17FA1F4F0062FC1D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		268BEBED18142364003A6B1D /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		268BEBEE18142364003A6B1D /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		268BEBEF18142364003A6B1D /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		269BD71617FB44400045D9B4 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
 		269BD71817FB44670045D9B4 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
 		269BD71917FB44670045D9B4 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
@@ -159,6 +164,9 @@
 				2619223217FA0AAC0062FC1D /* AppDelegate.m */,
 				2619223417FA0AAC0062FC1D /* MainMenu.xib */,
 				2619222617FA0AAC0062FC1D /* Supporting Files */,
+				268BEBED18142364003A6B1D /* PreferencesController.h */,
+				268BEBEE18142364003A6B1D /* PreferencesController.m */,
+				268BEBEF18142364003A6B1D /* Preferences.xib */,
 			);
 			path = BateryProlonger;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 				269BD72017FB50AD0045D9B4 /* icon-small.png in Resources */,
 				269BD72417FB5FBD0045D9B4 /* battery.iconset in Resources */,
 				269BD72617FB6F190045D9B4 /* .gitignore in Resources */,
+				268BEBF118142364003A6B1D /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +319,7 @@
 				2619222C17FA0AAC0062FC1D /* main.m in Sources */,
 				2619223317FA0AAC0062FC1D /* AppDelegate.m in Sources */,
 				269BD71A17FB44670045D9B4 /* AboutController.m in Sources */,
+				268BEBF018142364003A6B1D /* PreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +447,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BateryProlonger/BateryProlonger-Prefix.pch";
 				INFOPLIST_FILE = "BateryProlonger/BateryProlonger-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,6 +464,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BateryProlonger/BateryProlonger-Prefix.pch";
 				INFOPLIST_FILE = "BateryProlonger/BateryProlonger-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

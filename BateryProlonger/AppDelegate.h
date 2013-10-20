@@ -11,21 +11,19 @@
 #import <IOKit/ps/IOPowerSources.h>
 #import <IOKit/ps/IOPSKeys.h>
 @class AboutController;
+@class PreferencesController;
 
 @interface AppDelegate : NSObject <GrowlApplicationBridgeDelegate>
 {
     IBOutlet NSMenu *statusMenu;
     NSStatusItem *statusItem;
-    IBOutlet NSMenuItem *startAtLoginMenuItem;
     AboutController *aboutController;
+    PreferencesController *preferencesController;
 }
 
 - (void) refresh:(NSTimer *) theTimer;
 - (void) showNotification:(NSString *)notification;
 - (IBAction) openAboutWindow:(id)sender;
-- (IBAction) toogleLoginItem:(id)sender;
-- (bool) findAppInLoginItem;
-- (void) addAppAsLoginItem;
-- (void) deleteAppFromLoginItem;
+- (IBAction) openPreferencesWindow:(id)sender;
 
 @end
