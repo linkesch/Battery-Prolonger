@@ -14,13 +14,25 @@ Website (download & screenshots)
 http://orthes.github.io/Battery-Prolonger
 
 
-Version
--------
-
-v0.1-alpha
-
-
 Author
 ------
 
 Pavel Linkesch | [@linkesch](http://twitter.com/linkesch) | http://www.linkesch.sk
+
+
+Version
+-------
+
+v0.1.1-alpha
+
+
+Changelog
+---------
+
+**v0.1.1-alpha**
+
+- Added preferences window
+- Added option to play sound allong to notification
+- Added option to auto close notification window or to wait on click
+- Added option to set custom limits
+- Changed icons
