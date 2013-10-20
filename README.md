@@ -29,13 +29,13 @@ Pavel Linkesch | [@linkesch](http://twitter.com/linkesch) | http://www.linkesch.
 Version
 -------
 
-v0.1.1-alpha
+v0.1.2-alpha
 
 
 Changelog
 ---------
 
-**[2013-10-20] v0.1.1-alpha**
+**[2013-10-20] v0.1.2-alpha**
 
 - Added preferences window
 - Added option to play sound allong to notification
