@@ -14,6 +14,12 @@ Website (download & screenshots)
 http://orthes.github.io/Battery-Prolonger
 
 
+Updating
+--------
+
+Currently there is no update system implemented. If you don't want to miss any updates, please follow me on Twitter: [@linkesch](http://twitter.com/linkesch)
+
+
 Author
 ------
 
@@ -29,7 +35,7 @@ v0.1.1-alpha
 Changelog
 ---------
 
-**v0.1.1-alpha**
+**[2013-10-20] v0.1.1-alpha**
 
 - Added preferences window
 - Added option to play sound allong to notification
