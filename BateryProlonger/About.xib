@@ -100,8 +100,8 @@
 							<object class="NSTextFieldCell" key="NSCell" id="21030405">
 								<int key="NSCellFlags">70254657</int>
 								<int key="NSCellFlags2">4195328</int>
-								<string type="base64-UTF8" key="NSContents">VmVyc2lvbjoJCTAuMS4x4oCoQXV0aG9yOgkJUGF2ZWwgTGlua2VzY2gKICAgICAgICAgICAgICAgICAg
-ICBAbGlua2VzY2ggfCB3d3cubGlua2VzY2guc2s</string>
+								<string type="base64-UTF8" key="NSContents">VmVyc2lvbjoJCTAuMS4yLWFscGhh4oCoQXV0aG9yOgkJUGF2ZWwgTGlua2VzY2gKICAgICAgICAgICAg
+ICAgICAgICBAbGlua2VzY2ggfCB3d3cubGlua2VzY2guc2s</string>
 								<object class="NSFont" key="NSSupport" id="276066662">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">13</double>
@@ -181,7 +181,6 @@ CgpodHRwOi8vd3d3LndpcmVkLmNvbS9nYWRnZXRsYWIvMjAxMy8wOS9sYXB0b3AtYmF0dGVyeQ</stri
 							<string key="NSFrame">{{17, 20}, {450, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="925159151">
@@ -201,7 +200,7 @@ CgpodHRwOi8vd3d3LndpcmVkLmNvbS9nYWRnZXRsYWIvMjAxMy8wOS9sYXB0b3AtYmF0dGVyeQ</stri
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="884873170"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1280, 800}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
