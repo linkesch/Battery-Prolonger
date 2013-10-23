@@ -39,6 +39,11 @@
         [startAtLoginMenuItem setState: NSOnState];
     }
     
+    if(NSClassFromString(@"NSUserNotificationCenter"))
+    {
+        [autoCloseItem setTransparent:YES];
+    }
+    
     default1 = [[NSUserDefaults standardUserDefaults] objectForKey:@"playSound"];
     if ([default1 isEqual: @"true"]) {
         [playSoundItem setState: NSOnState];

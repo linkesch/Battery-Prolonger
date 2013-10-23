@@ -83,7 +83,7 @@ int lastPowerSource;
     
     if(batteryCharging == 1 && batteryCurrent > topLimit && notified1 == false)
     {
-        NSString *notification = @"Your battery is charged enough.\n\nYou can unplug your MacBook now.";
+        NSString *notification = @"Your battery is charged enough.\nYou can unplug your MacBook now.";
         [self showNotification:notification];
         notified1 = true;
         notified2 = false;
@@ -91,7 +91,7 @@ int lastPowerSource;
     else if(batteryCharging == 0 && batteryCurrent < bottomLimit && notified2 == false)
     {
         
-        NSString *notification =[NSString stringWithFormat:@"Your battery is charged to less than %li%%.\n\nPlease, plug in your MacBook to a power adapter.", bottomLimit];
+        NSString *notification =[NSString stringWithFormat:@"Your battery is charged to less than %li%%.\nPlease, plug in your MacBook to a power adapter.", bottomLimit];
         [self showNotification:notification];
         notified1 = false;
         notified2 = true;
@@ -107,27 +107,44 @@ int lastPowerSource;
     return dict;
 }
 
-- (void)showNotification:(NSString *)notification
+- (void)showNotification:(NSString *)notificationText
 {
-    NSBundle *myBundle = [NSBundle bundleForClass:[AppDelegate class]];
-    NSString *growlPath = [[myBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl.framework"];
-    NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
-    Boolean isSticky = YES;
-    
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"autoClose"] isEqual: @"true"])
+    if(NSClassFromString(@"NSUserNotificationCenter"))
     {
-        isSticky = NO;
-    }
-    
-    if (growlBundle && [growlBundle load])
-    {
-        [GrowlApplicationBridge setGrowlDelegate:self];
-        
-        [GrowlApplicationBridge notifyWithTitle:@"Battery Prolonger" description:notification notificationName:@"Notification" iconData:nil priority:2 isSticky:isSticky clickContext:[NSDate date]];
+        NSUserNotification *notification = [[NSUserNotification alloc] init];
+        notification.title = @"Battery Prolonger";
+        notification.informativeText = notificationText;
+        notification.hasActionButton = NO;
         
         if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"playSound"] isEqual: @"true"])
         {
-            [[NSSound soundNamed:@"Purr"] play];
+            notification.soundName = @"Purr";
+        }
+        
+        [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+    }
+    else
+    {
+        NSBundle *myBundle = [NSBundle bundleForClass:[AppDelegate class]];
+        NSString *growlPath = [[myBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl.framework"];
+        NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
+        Boolean isSticky = YES;
+    
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"autoClose"] isEqual: @"true"])
+        {
+            isSticky = NO;
+        }
+    
+        if (growlBundle && [growlBundle load])
+        {
+            [GrowlApplicationBridge setGrowlDelegate:self];
+        
+            [GrowlApplicationBridge notifyWithTitle:@"Battery Prolonger" description:notificationText notificationName:@"Notification" iconData:nil priority:2 isSticky:isSticky clickContext:[NSDate date]];
+        
+            if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"playSound"] isEqual: @"true"])
+            {
+                [[NSSound soundNamed:@"Purr"] play];
+            }
         }
     }
 }

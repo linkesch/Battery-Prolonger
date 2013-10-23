@@ -1,7 +1,7 @@
 Battery Prolonger
 =================
 
-Battery Prolonger is a simple MAC OS X application, that informs you when is the best time to plug in/unplug your MacBook to/from a power adapter to prolong your battery life.
+Battery Prolonger is a simple Mac OS X application, that informs you when is the best time to plug in/unplug your MacBook to/from a power adapter to prolong your battery life.
 
 "Cadex Electronics CEO Isidor Buchmann told WIRED that ideally everyone would charge their batteries to 80 percent then let them drain to about 40 percent. This will prolong the life of your battery — in some cases by as much as four times."
 
@@ -29,11 +29,18 @@ Pavel Linkesch | [@linkesch](http://twitter.com/linkesch) | http://www.linkesch.
 Version
 -------
 
-v0.1.2-alpha
+v0.1.3-alpha
 
 
 Changelog
 ---------
+
+**[2013-10-23] v0.1.3-alpha**
+
+- Hide auto close option in preferences for OS X 1.8 and higher
+- Use native Notification Center for OS X 1.8 and higher, else use Growl
+- Hide action button for notification in OS X 1.8 and higher
+
 
 **[2013-10-20] v0.1.2-alpha**
 
