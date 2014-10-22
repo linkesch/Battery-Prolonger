@@ -28,6 +28,7 @@
 		269BD72017FB50AD0045D9B4 /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 269BD71F17FB50AD0045D9B4 /* icon-small.png */; };
 		269BD72417FB5FBD0045D9B4 /* battery.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 269BD72317FB5FBD0045D9B4 /* battery.iconset */; };
 		269BD72617FB6F190045D9B4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 269BD72517FB6F190045D9B4 /* .gitignore */; };
+		26F35D8219F7B2DD00B07A6E /* icon-small@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F35D8119F7B2DD00B07A6E /* icon-small@x2.png */; };
 		C69F2E9518E61B3400312792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69F2E9418E61B3400312792 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		269BD71F17FB50AD0045D9B4 /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small.png"; sourceTree = "<group>"; };
 		269BD72317FB5FBD0045D9B4 /* battery.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = battery.iconset; sourceTree = "<group>"; };
 		269BD72517FB6F190045D9B4 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		26F35D8119F7B2DD00B07A6E /* icon-small@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small@x2.png"; sourceTree = "<group>"; };
 		C69F2E9418E61B3400312792 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 			children = (
 				269BD72317FB5FBD0045D9B4 /* battery.iconset */,
 				269BD71F17FB50AD0045D9B4 /* icon-small.png */,
+				26F35D8119F7B2DD00B07A6E /* icon-small@x2.png */,
 				269BD71617FB44400045D9B4 /* About.xib */,
 				269BD71817FB44670045D9B4 /* AboutController.h */,
 				269BD71917FB44670045D9B4 /* AboutController.m */,
@@ -243,7 +246,7 @@
 			name = BateryProlongerTests;
 			productName = BateryProlongerTests;
 			productReference = 2619223C17FA0AAD0062FC1D /* BateryProlongerTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -283,6 +286,7 @@
 				2619223017FA0AAC0062FC1D /* Credits.rtf in Resources */,
 				2619223617FA0AAC0062FC1D /* MainMenu.xib in Resources */,
 				269BD71717FB44400045D9B4 /* About.xib in Resources */,
+				26F35D8219F7B2DD00B07A6E /* icon-small@x2.png in Resources */,
 				269BD72017FB50AD0045D9B4 /* icon-small.png in Resources */,
 				269BD72417FB5FBD0045D9B4 /* battery.iconset in Resources */,
 				269BD72617FB6F190045D9B4 /* .gitignore in Resources */,

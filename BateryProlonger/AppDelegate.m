@@ -27,15 +27,12 @@ int lastPowerSource;
 {
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
     
-    NSImage* icon = [NSImage imageNamed:@"StatusbarIcon"];
-    NSImage *highlightIcon = [NSImage imageNamed:@"StatusbarIcon"];
-    [highlightIcon setTemplate:YES];
-    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSImage* icon = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"icon-small" ofType:@"png"]];
+    [icon setTemplate:YES];
+        
     [statusItem setImage:icon];
-    [statusItem setAlternateImage:icon];
     [statusItem setMenu:statusMenu];
-    [statusItem setHighlightMode:YES];
-    
     
     [self refresh:NULL];
     

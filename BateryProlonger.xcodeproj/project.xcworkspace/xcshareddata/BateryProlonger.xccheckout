@@ -12,22 +12,34 @@
 	<dict>
 		<key>7480BF4A-8272-4742-A3CF-EE8F4E5EA36E</key>
 		<string>https://github.com/skfd/Battery-Prolonger.git</string>
+		<key>90D53E52F69661826D440C4F92A99395750984DE</key>
+		<string>https://github.com/orthes/Battery-Prolonger.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BateryProlonger.xcodeproj/project.xcworkspace</string>
+	<string>BateryProlonger.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7480BF4A-8272-4742-A3CF-EE8F4E5EA36E</key>
+		<string>../../../Battery-Prolonger</string>
+		<key>90D53E52F69661826D440C4F92A99395750984DE</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/skfd/Battery-Prolonger.git</string>
+	<string>https://github.com/orthes/Battery-Prolonger.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7480BF4A-8272-4742-A3CF-EE8F4E5EA36E</string>
+	<string>90D53E52F69661826D440C4F92A99395750984DE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>90D53E52F69661826D440C4F92A99395750984DE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BateryProlonger</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

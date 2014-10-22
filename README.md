@@ -29,11 +29,16 @@ Pavel Linkesch | [@linkesch](http://twitter.com/linkesch) | http://www.linkesch.
 Version
 -------
 
-v0.1.3-alpha
+v0.1.4
 
 
 Changelog
 ---------
+
+**[2014-10-22] v0.1.4**
+
+- Added support for retina displays
+- Added support for OS X Yosemite dark mode
 
 **[2013-10-23] v0.1.3-alpha**
 
